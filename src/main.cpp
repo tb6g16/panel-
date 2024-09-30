@@ -6,6 +6,10 @@
 
 using namespace std;
 
+// TODO: change file read to include first line
+// TODO: convert points to spline
+// TODO: panel method (copy xfoil)
+
 int main(int argc, char **argv){
     Aerofoil aerofoil("naca2412.dat");
 
