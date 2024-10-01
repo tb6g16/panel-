@@ -1,9 +1,12 @@
 #include <iostream>
 
+#include "matplotlibcpp.h"
+
 #include "spline.hpp"
 #include "aerofoil.hpp"
 
 using namespace std;
+namespace plt = matplotlibcpp;
 
 // TODOL plotting method for the aerofoils
 // TODO: object for bezier compositive curve
@@ -31,6 +34,9 @@ int main(int argc, char **argv){
         y[i] = coord[1];
         i++;
     }
+
+    plt::plot(x, y);
+    plt::show();
 
     return 0;
 }
