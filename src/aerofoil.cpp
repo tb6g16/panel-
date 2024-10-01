@@ -2,7 +2,7 @@
 #include <fstream>
 #include <vector>
 
-#include "matplotlibcpp.h"
+#include <matplotlibcpp.h>
 
 #include "aerofoil.hpp"
 
@@ -17,7 +17,7 @@ Aerofoil::Aerofoil(string filename){
     coords = getAerofoilData(filename);
 }
 
-// TODO: try gnuplot for faster plotting? Or matplot++?
+// TODO: try gnuplot for faster plotting
 void Aerofoil::show(){
     // declare variables
     int i;
@@ -30,7 +30,7 @@ void Aerofoil::show(){
     }
 
     // plot results
-    plt::plot(x, y);
+    plt::plot(x, y, {{"linewidth", "5"}});
     plt::show();
 }
 
