@@ -1,5 +1,6 @@
 *.out
 *.o
 *.dat
-settings.json
+*.pdf
+*.json
 panelpp
