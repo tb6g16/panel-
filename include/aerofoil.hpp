@@ -9,7 +9,8 @@ class Aerofoil{
     public:
         vector<vector<double>> coords;
         Aerofoil(vector<vector<double>>);
-        Aerofoil(string filename);
+        Aerofoil(string);
+        void show();
 };
 
 std::vector<std::vector<double>> getAerofoilData(std::string filename);

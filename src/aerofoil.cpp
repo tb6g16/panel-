@@ -2,9 +2,12 @@
 #include <fstream>
 #include <vector>
 
+#include "matplotlibcpp.h"
+
 #include "aerofoil.hpp"
 
 using namespace std;
+namespace plt = matplotlibcpp;
 
 Aerofoil::Aerofoil(vector<vector<double>> aerofoil_coords){
     coords = aerofoil_coords;
@@ -12,6 +15,23 @@ Aerofoil::Aerofoil(vector<vector<double>> aerofoil_coords){
 
 Aerofoil::Aerofoil(string filename){
     coords = getAerofoilData(filename);
+}
+
+// TODO: try gnuplot for faster plotting? Or matplot++?
+void Aerofoil::show(){
+    // declare variables
+    int i;
+    vector<double> x(coords.size()), y(coords.size());
+
+    // loop over coordinates assigning to vectors
+    for (i = 0; i < coords.size(); ++i){
+        x[i] = coords[i][0];
+        y[i] = coords[i][1];
+    }
+
+    // plot results
+    plt::plot(x, y);
+    plt::show();
 }
 
 vector<vector<double>> getAerofoilData(string filename){
