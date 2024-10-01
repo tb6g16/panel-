@@ -22,7 +22,6 @@ vector<vector<double>> getAerofoilData(string filename){
 
     // open file and read first line
     ifstream file(filename);
-    getline(file, line);
 
     // loop over lines assigning to output vector
     while (getline(file, line)){

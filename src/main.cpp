@@ -6,7 +6,6 @@
 
 using namespace std;
 
-// TODO: change file read to include first line
 // TODO: convert points to spline
 // TODO: panel method (copy xfoil)
 
